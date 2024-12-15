@@ -1,10 +1,5 @@
 # Solar Panel Efficiency Prediction
 
-## Personal Information
-Submission done by: Ng Hong Jin, Jonathan
-
-Email: ngjonathan2@gmail.com
-
 ## Project Overview
 This project aims to leverage historical same day forecasted weather data, to implement predictive algorithms that identify and learn from patterns associated with varying efficiency levels. The repository contains a notebook `eda.ipynb`, which conducts Exploratory Data Analysis on the given dataset `weather.db` and `air_quality.db`. 
 
