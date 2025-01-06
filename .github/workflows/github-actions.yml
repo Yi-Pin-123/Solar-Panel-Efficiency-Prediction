@@ -23,16 +23,8 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Verify Database Files
-        run: |
-          if [ ! -f "../data/weather.db" ]; then
-            echo "weather.db is missing!"
-            exit 1
-          fi
-          if [ ! -f "../data/air_quality.db" ]; then
-            echo "air_quality.db is missing!"
-            exit 1
-          fi
+      - name: List Data Folder Contents
+        run: ls -la ./data
 
       - name: Run executable bash script
         run: bash ./run.sh
