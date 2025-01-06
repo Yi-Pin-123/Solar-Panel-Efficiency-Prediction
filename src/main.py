@@ -1,8 +1,8 @@
 from data_merger import DataMerger  # Import the DataMerger class
 
 # Define database paths, table names, and merge column
-db1_path = "../data/weather.db"  # Replace with the actual path
-db2_path = "../data/air_quality.db"  # Replace with the actual path
+db1_path = "./data/weather.db"  # Replace with the actual path
+db2_path = "./data/air_quality.db"  # Replace with the actual path
 table1_name = "weather"  # Replace with the actual table name
 table2_name = "air_quality"  # Replace with the actual table name
 merge_column = "data_ref"  # Replace with the actual column name
