@@ -17,13 +17,22 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-      
+
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Ensure Database File Exists
+        run: |
+          if [ ! -f "path/to/database.db" ]; then
+            echo "Database file is missing."
+            exit 1
+          fi
+
       - name: Run executable bash script
         run: bash ./run.sh
+
       - name: Assessment 2 Reminder
         run: |
           echo "Reminder to add AISG-AIAP as a collaborator in your repository"
