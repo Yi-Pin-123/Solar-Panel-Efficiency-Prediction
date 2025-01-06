@@ -23,10 +23,14 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Ensure Database File Exists
+      - name: Verify Database Files
         run: |
-          if [ ! -f "path/to/database.db" ]; then
-            echo "Database file is missing."
+          if [ ! -f "../data/weather.db" ]; then
+            echo "weather.db is missing!"
+            exit 1
+          fi
+          if [ ! -f "../data/air_quality.db" ]; then
+            echo "air_quality.db is missing!"
             exit 1
           fi
 
