@@ -1,37 +1,40 @@
 # Solar Panel Efficiency Prediction
 
-## Project Overview
-This project aims to leverage historical same day forecasted weather data, to implement predictive algorithms that identify and learn from patterns associated with varying efficiency levels. The repository contains a notebook `eda.ipynb`, which conducts Exploratory Data Analysis on the given dataset `weather.db` and `air_quality.db`. 
+This is the assessment for an internship. IYKYK. I am putting this template here in case I ever need to do a similar assessment. If you need, you can use the template also. 
 
-Afterwhich, an end-to-end machine learning pipeline is also designed and implemented as well to ingest and process the 
-entailed dataset, subsequently, feeding it into the machine learning algorithms. For more details, take a look at the attached pdf for the in depth problem statement and requirements.
+## Project Overview
+This project uses weather and air quality data to implement predictive algorithms to learn from patterns associated with varying efficiency levels. The repository contains a notebook `eda.ipynb`, which conducts Exploratory Data Analysis on the given dataset `weather.db` and `air_quality.db`. 
+
+Afterwhich, an end-to-end machine learning pipeline is implemented to
+1. Merge the datasets together based on the primary key
+2. Clean the merged dataset
+3. Preprocess and feed the dataset to 3 machine learning models
+
+Note that there is no hyperparameter tuning on the models because I can't be bothered anymore
 
 ## Directory Structure
 - `.github`: Scripts to execute end-to-end machine learning pipeline using GitHub Actions
-- `data/`: Contains database files (not submitted)
-- `results/`: Results of model training
-  - `feature_importance.png`: Visualization of feature importances
-  - `model_results.csv`: Performance metrics of Models
+- `data/`: Contains database files
+- `results.md`: Results of model training
 - `src/`: Source code files
-  - `constants.py`: Constant variables
-  - `data_ingestion.py`: Data loading scripts
-  - `data_preprocessing.py`: Data cleaning and preparation
-  - `model.py`: ML model implementation
+  - `build_model.py`: Preprocess the cleaned data for the machine learning model and run the machine models
+  - `data_cleaner.py`: Data cleaning
+  - `data_merger.py`: Merge the 2 datasets and remove any duplicates
   - `main.py`: Main execution script
 - `eda.ipynb`: Exploratory Data Analysis notebook
 - `requirements.txt`: Required Python packages
 - `run.sh`: Bash script to run the project
+- `References.md` : Contains the references mentioned in the `eda.ipynb`
 
 
 ## Installation & Setup
 1. Clone this repository
-2. Place the `weather.db` & `air_quality.db` file in a `data` folder. The machine learning 
-pipeline should retrieve the dataset using the relative path `data/weather.db` & `data/air_quality.db`. 
-> **Note:** Github Actions will fail if .db files are not added into the `/data` folder
-3. Run the bash script run.sh 
+2. Run the bash script run.sh 
 ```bash
 ./run.sh
 ```
+
+The parts below are typed by the author which I forked from and I am too lazy to edit them. 
 
 ## Pipeline Logical Flow
 
