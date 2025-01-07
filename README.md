@@ -10,15 +10,15 @@ Afterwhich, an end-to-end machine learning pipeline is implemented to
 2. Clean the merged dataset
 3. Preprocess and feed the dataset to 3 machine learning models
 
-Note that there is no hyperparameter tuning on the models because I can't be bothered anymore
+Note that there is no hyperparameter tuning on the models because I can't be bothered anymore. But if you want, you can tune the hyperparameters and test the best model. 
 
 ## Directory Structure
 - `.github`: Scripts to execute end-to-end machine learning pipeline using GitHub Actions
 - `data/`: Contains database files
 - `results.md`: Results of model training
 - `src/`: Source code files
-  - `build_model.py`: Preprocess the cleaned data for the machine learning model and run the machine models
-  - `data_cleaner.py`: Data cleaning
+  - `build_model.py`: Preprocess the cleaned data for the machine learning model, then train and evaluate models
+  - `data_cleaner.py`: Data cleaning on the merged dataset
   - `data_merger.py`: Merge the 2 datasets and remove any duplicates
   - `main.py`: Main execution script
 - `eda.ipynb`: Exploratory Data Analysis notebook
@@ -33,9 +33,9 @@ Note that there is no hyperparameter tuning on the models because I can't be bot
 ```bash
 ./run.sh
 ```
-
+---
 The parts below are typed by the author which I forked from and I am too lazy to edit them. 
-
+---
 ## Pipeline Logical Flow
 
 1. Data Ingestion
