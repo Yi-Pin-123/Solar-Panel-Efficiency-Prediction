@@ -164,9 +164,9 @@ if __name__ == "__main__":
         print(f"Train Results for {model_name}:")
         print(runner.get_results()[model_name])
 
-    #Train Results for Logistic Regression:
-    #{'accuracy': 0.7237141811609897, 'precision': 0.7237141811609897, 'recall': 0.7237141811609897, 'f1_score': 0.7237141811609897}
-    #Train Results for Decision Tree:
-    #{'accuracy': 0.6510802595908978, 'precision': 0.6510802595908978, 'recall': 0.6510802595908978, 'f1_score': 0.6510802595908978}
-    #Train Results for SVM:
-    #{'accuracy': 0.7573303062664765, 'precision': 0.7573303062664765, 'recall': 0.7573303062664765, 'f1_score': 0.7573303062664765}
+#Train Results for Logistic Regression:
+#{'accuracy': 0.7237141811609897, 'precision': 0.7237141811609897, 'recall': 0.7237141811609897, 'f1_score': 0.7237141811609897}
+#Train Results for Decision Tree:
+#{'accuracy': 0.6510802595908978, 'precision': 0.6510802595908978, 'recall': 0.6510802595908978, 'f1_score': 0.6510802595908978}
+#Train Results for SVM:
+#{'accuracy': 0.7573303062664765, 'precision': 0.7573303062664765, 'recall': 0.7573303062664765, 'f1_score': 0.7573303062664765}

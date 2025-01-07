@@ -5,17 +5,14 @@ db1_path = "./data/weather.db"  # Replace with the actual path
 db2_path = "./data/air_quality.db"  # Replace with the actual path
 table1_name = "weather"  # Replace with the actual table name
 table2_name = "air_quality"  # Replace with the actual table name
-merge_column = "data_ref"  # Replace with the actual column name
+merge_column = ["data_ref", "date"]  # Replace with the actual column name
 
 merger = DataMerger(db1_path, db2_path, table1_name, table2_name, merge_column)
 merged_data = merger.merge_remove_duplicate()
 
 
 from data_cleaner import DataCleaning  # Import the DataCleaner class
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
+
 
 # Initialize the DataCleaning class
 cleaner = DataCleaning(input_dataframe=merged_data)
@@ -87,6 +84,11 @@ category_metadata = {
 cleaned_df = cleaner.get_dataframe()
 
 from build_model import ModelRunner  # Import the ModelRunner class
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
+
 
 # Convert ordinal categorical columns to their numerical codes
 cleaned_df = cleaned_df.apply(lambda col: col.cat.codes if col.dtype.name == 'category' else col)

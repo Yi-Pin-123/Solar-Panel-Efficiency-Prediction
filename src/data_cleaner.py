@@ -37,7 +37,11 @@ class DataCleaning:
     def convert_to_datetime(self, column_name, dayfirst=True):
         """Converts a column to datetime format."""
         if self.dataframe is not None:
-            self.dataframe[column_name] = pd.to_datetime(self.dataframe[column_name], dayfirst=dayfirst)
+            if column_name not in self.dataframe.columns:
+                print(f"Column '{column_name}' not found in the DataFrame.")
+                print(self.dataframe.info())
+            else:
+                self.dataframe[column_name] = pd.to_datetime(self.dataframe[column_name], dayfirst=dayfirst)
         else:
             raise ValueError("Dataframe is not loaded. Use load_data() first.")
 
